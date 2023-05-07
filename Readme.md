@@ -17,4 +17,8 @@ To get a token you should register at. https://eskomsepush.gumroad.com/l/api
 
 Take note that the free API is limited to 50 requests per day.
 
-
+## Example
+### First Screen
+![First Screen](specs/screen1.png)
+### Third Screen
+![Third Screen](specs/screen3.png)

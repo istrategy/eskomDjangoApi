@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+myenv/
+*.virtualenv/
+Lib/
+Scripts/
+
+# Sensitive files
+token*

@@ -1,0 +1,26 @@
+<!-- eskomapp/templates/eskomapp/search.html -->
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <h1>Area Search</h1>
+    <form method="get" class="my-3">
+      <div class="input-group">
+        <input type="text" name="q" value="{{ query }}" placeholder="Search for areas" class="form-control" />
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </form>
+
+    <ul class="list-group">
+      {% for result in results %}
+        <li class="list-group-item">
+          <a href="{% url 'area_info' result.id %}">
+            {{ result.name }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

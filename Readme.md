@@ -9,7 +9,7 @@ The App currently has two functions.
 2. Display loadshedding schedule for your area
 
 ## Requirements
-All the requirements is in the requirements.txt file. 
+All the requirements are in the requirements.txt file. 
 
 For the api to work one must create a token.txt file in the root directory and add the token to it.
 

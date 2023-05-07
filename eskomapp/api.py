@@ -2,7 +2,7 @@
 import requests
 
 BASE_URL = 'https://developer.sepush.co.za/business/2.0'
-with open('token3.txt', 'r') as token_file:
+with open('token.txt', 'r') as token_file:
     TOKEN = token_file.read().strip()
 
 headers = {

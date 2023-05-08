@@ -1,5 +1,6 @@
 # eskomapp/api.py
 import requests
+from django.http import HttpResponse
 
 BASE_URL = 'https://developer.sepush.co.za/business/2.0'
 with open('token.txt', 'r') as token_file:
@@ -13,6 +14,9 @@ def search_areas(text):
     # url = f'{BASE_URL}/areas_search?test=true&text={text}'  # Add the 'test' query parameter
     url = f'{BASE_URL}/areas_search?text={text}'  # Add the 'test' query parameter
     response = requests.get(url, headers=headers)
+    # if response.status_code == 429:
+    #     return HttpResponse('Rate limit exceeded', status=429)
+        # raise Exception('Rate limit exceeded')
     return response.json()
 
 def get_area_info(area_id):

@@ -1,4 +1,5 @@
 # eskomapp/views.py
+from django.http import HttpResponse
 from django.shortcuts import render
 from .api import search_areas, get_area_info
 from datetime import datetime
@@ -9,6 +10,12 @@ def search(request):
 
     if query:
         results = search_areas(query)
+        try:
+            results['error']
+            return HttpResponse(results['error'], status=429)
+        except Exception as e:
+            print(e)
+#            return render(request, 'eskomapp/search.html', {'query': query, 'results': []})
         arearesults = results['areas']
         # Filter out results without an id attribute
         arearesults = [result for result in arearesults if 'id' in result]
